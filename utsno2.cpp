@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
-
+using namespace std;
 class Tabung {
-private:
+public:
     float jariJari;
     float tinggi;
 
@@ -16,7 +16,7 @@ public:
 
     // Method
     float hitungVolume() const {
-        return M_PI * std::pow(jariJari, 2) * tinggi;
+        return M_PI * pow(jariJari, 2) * tinggi;
     }
 
     float hitungLuasPermukaan() const {
@@ -28,28 +28,35 @@ int main() {
     // Objek Tabung
     Tabung tabung;
 
-    // Input dari pengguna
-    std::cout << "Masukkan jari-jari tabung: ";
-    std::cin >> tabung.setJariJari;
+    // Variabel untuk menyimpan input dari pengguna
+    float inputJariJari, inputTinggi;
 
-    std::cout << "Masukkan tinggi tabung: ";
-    std::cin >> tabung.setTinggi;
+    // Input dari pengguna
+    cout << "Masukkan jari-jari tabung: ";
+    cin >> inputJariJari;
+    tabung.setJariJari(inputJariJari);
+
+    cout << "Masukkan tinggi tabung: ";
+    cin >> inputTinggi;
+    tabung.setTinggi(inputTinggi);
 
     // Menghitung dan mencetak volume dan luas permukaan
-    std::cout << "Volume Tabung: " << tabung.hitungVolume() << std::endl;
-    std::cout << "Luas Permukaan Tabung: " << tabung.hitungLuasPermukaan() << std::endl;
+    cout << "Volume Tabung: " << tabung.hitungVolume() << endl;
+    cout << "Luas Permukaan Tabung: " << tabung.hitungLuasPermukaan() << endl;
 
     // Menggunakan method setter dan getter
-    std::cout << "Masukkan jari-jari baru: ";
-    std::cin >> tabung.setJariJari;
+    cout << "Masukkan jari-jari baru: ";
+    cin >> inputJariJari;
+    tabung.setJariJari(inputJariJari);
 
-    std::cout << "Masukkan tinggi baru: ";
-    std::cin >> tabung.setTinggi;
+    cout << "Masukkan tinggi baru: ";
+    cin >> inputTinggi;
+    tabung.setTinggi(inputTinggi);
 
-    std::cout << "Jari-Jari Tabung (setelah diubah): " << tabung.getJariJari() << std::endl;
-    std::cout << "Tinggi Tabung (setelah diubah): " << tabung.getTinggi() << std::endl;
-    std::cout << "Volume Tabung (setelah diubah): " << tabung.hitungVolume() << std::endl;
-    std::cout << "Luas Permukaan Tabung (setelah diubah): " << tabung.hitungLuasPermukaan() << std::endl;
+    cout << "Jari-Jari Tabung (setelah diubah): " << tabung.getJariJari() << endl;
+    cout << "Tinggi Tabung (setelah diubah): " << tabung.getTinggi() << endl;
+    cout << "Volume Tabung (setelah diubah): " << tabung.hitungVolume() << endl;
+    cout << "Luas Permukaan Tabung (setelah diubah): " << tabung.hitungLuasPermukaan() << endl;
 
     return 0;
 }
